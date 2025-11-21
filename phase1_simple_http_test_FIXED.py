@@ -58,14 +58,14 @@ def run_server():
     global server_running
     try:
         server = BaseHTTPServer.HTTPServer(('localhost', 8080), SimpleHandler)
-        print("✅ Server thread started successfully!")
+        print(" Server thread started successfully!")
 
         # Serve requests until server_running is False
         while server_running:
             server.handle_request()  # Handle one request at a time
 
     except Exception as e:
-        print("❌ Server error: " + str(e))
+        print(" Server error: " + str(e))
 
 
 # Start the server
@@ -75,7 +75,7 @@ print("=" * 60)
 print("Starting HTTP server on localhost:8080")
 print("Open your browser and go to: http://localhost:8080")
 print("")
-print("✨ Rhino will stay responsive!")
+print(" Rhino will stay responsive!")
 print("   You can rotate, zoom, and use Rhino normally")
 print("")
 print("To stop: Close this Python editor window")
@@ -86,7 +86,7 @@ server_thread = threading.Thread(target=run_server)
 server_thread.daemon = True  # Thread will stop when script stops
 server_thread.start()
 
-print("✅ Server is running in background!")
+print(" Server is running in background!")
 print("   Try visiting http://localhost:8080 in your browser")
 print("")
 print("Server status: ACTIVE")
