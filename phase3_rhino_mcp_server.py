@@ -97,9 +97,9 @@ def ping_rhino() -> str:
     result = call_rhino("ping")
 
     if result.get("status") == "ok":
-        return "✅ Rhino is running and ready!"
+        return " Rhino is running and ready!"
     else:
-        return f"❌ Error: {result.get('message', 'Unknown error')}"
+        return f" Error: {result.get('message', 'Unknown error')}"
 
 
 @mcp.tool()
@@ -140,12 +140,12 @@ def create_box(
         pos = result.get("position", [x, y, z])
         dims = result.get("dimensions", [width, height, depth])
         return (
-            f"✅ Box created in Rhino!\n"
+            f" Box created in Rhino!\n"
             f"Position: ({pos[0]}, {pos[1]}, {pos[2]})\n"
             f"Dimensions: {dims[0]} × {dims[1]} × {dims[2]}"
         )
     else:
-        return f"❌ Error: {result.get('message', 'Unknown error')}"
+        return f" Error: {result.get('message', 'Unknown error')}"
 
 
 @mcp.tool()
@@ -180,12 +180,12 @@ def create_sphere(
         center = result.get("center", [x, y, z])
         r = result.get("radius", radius)
         return (
-            f"✅ Sphere created in Rhino!\n"
+            f" Sphere created in Rhino!\n"
             f"Center: ({center[0]}, {center[1]}, {center[2]})\n"
             f"Radius: {r}"
         )
     else:
-        return f"❌ Error: {result.get('message', 'Unknown error')}"
+        return f" Error: {result.get('message', 'Unknown error')}"
 
 
 # Run the MCP server
