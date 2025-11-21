@@ -201,7 +201,7 @@ def run_server(port=8080):
     """
     global server_running
     try:
-        server = BaseHTTPServer.HTTPServer(('localhost', port), RhinoGeometryHandler)
+        server = BaseHTTPServer.HTTPServer(('0.0.0.0', port), RhinoGeometryHandler)
         print(" Server thread started successfully!")
         print("   Rhino UI will remain responsive")
         print("")
@@ -220,7 +220,7 @@ print("\n" + "=" * 70)
 print("  RHINO HTTP SERVER FOR MCP (Non-Blocking)")
 print("=" * 70)
 print("Status: Starting server...")
-print("Listening on: http://localhost:8080")
+print("Listening on: http://0.0.0.0:8080 (accessible from WSL2)")
 print("\nAvailable commands:")
 print("  - create_box: Creates a box with specified dimensions")
 print("  - create_sphere: Creates a sphere with specified radius")
