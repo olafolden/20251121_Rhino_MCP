@@ -11,7 +11,7 @@ INSTRUCTIONS FOR USE:
 3. Copy this entire file into the Python editor
 4. Save it as 'rhino_http_server.py' (File → Save As)
 5. Click Run button (play icon)
-6. You should see: "✅ Server is running! Waiting for commands..."
+6. You should see: " Server is running! Waiting for commands..."
 7. Rhino will stay responsive! You can work normally while server runs
 
 To stop: Close the Python editor window
@@ -202,7 +202,7 @@ def run_server(port=8080):
     global server_running
     try:
         server = BaseHTTPServer.HTTPServer(('localhost', port), RhinoGeometryHandler)
-        print("✅ Server thread started successfully!")
+        print(" Server thread started successfully!")
         print("   Rhino UI will remain responsive")
         print("")
 
@@ -211,7 +211,7 @@ def run_server(port=8080):
             server.handle_request()  # Handle one request at a time
 
     except Exception as e:
-        print("\n❌ ERROR: " + str(e))
+        print("\n ERROR: " + str(e))
         print(traceback.format_exc())
 
 
@@ -225,7 +225,7 @@ print("\nAvailable commands:")
 print("  - create_box: Creates a box with specified dimensions")
 print("  - create_sphere: Creates a sphere with specified radius")
 print("  - ping: Check if server is running")
-print("\n✨ Rhino will stay responsive!")
+print("\n Rhino will stay responsive!")
 print("   You can rotate, zoom, and use Rhino normally")
 print("\nTo stop: Close this Python editor window")
 print("=" * 70 + "\n")
@@ -235,7 +235,7 @@ server_thread = threading.Thread(target=run_server, args=(8080,))
 server_thread.daemon = True  # Thread will stop when script stops
 server_thread.start()
 
-print("✅ Server is running in background!")
+print(" Server is running in background!")
 print("   Waiting for commands from MCP server...")
 print("")
 print("Server status: ACTIVE")
